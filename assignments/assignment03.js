@@ -1,4 +1,5 @@
 let elem = [];
+let totals = [];
 // assign the entire table row for hole 1 to a variable, elem
 elem[1] = document.getElementById("one");
 elem[2] = document.getElementById("2");
@@ -18,11 +19,13 @@ elem[15] = document.getElementById("15");
 elem[16] = document.getElementById("16");
 elem[17] = document.getElementById("17");
 elem[18] = document.getElementById("18");
-totals = document.getElementById("totals");
+totals[1] = document.getElementById("totals");
 // display the number of children (all td elements)
 // console.log(elem.children.length);
 // display the content of the + button, which is the first child of the fifth element
 // console.log(elem.children[4].children[0]); 
+
+//total in all of the buttons, so change is always calced
 
 // assign a function to the + button
 elem[1].children[4].children[0].onclick = function(){add1(elem[1]);total(elem[1]);};
@@ -122,36 +125,36 @@ function sub1 (elem) {
     }
   }
 
-function clear (elem) {
+function clear (elem) {//resets the elem[xyz]
   elem.children[2].innerHTML = "-";
   elem.children[3].innerHTML = "-";
 }
 function total (elem) { 
-  if(totals.children[1].innerHTML == "-") 
+  if(totals[1].children[1].innerHTML == "-") { //if not yet set, game start changes all values to 0
     totals.children[1].innerHTML = 0;
     totals.children[2].innerHTML = 0;
     totals.children[3].innerHTML = 0;
-  else {
+}
   //par total
-  let x = totals.children[1].innerHTML;
+  let x = totals[1].children[1].innerHTML;
     x = Number.parseInt(x);
   let y = elem.children[1].innerHTML;
     y = Number.parseInt(y);
-  x = y + x
-  totals.children[1].innerHTML = x;
+  x = y + x;
+  totals[1].children[1].innerHTML = x;
   //score totals
-  let a = totals.children[2].innerHTML;
+  let a = totals[1].children[2].innerHTML;
     a = Number.parseInt(a);
   let b = elem.children[2].innerHTML;
     b = Number.parseInt(b);
-  a = b + a
-  totals.children[2].innerHTML = a;
+  a = b + a;
+  totals[1].children[2].innerHTML = a;
   //over/under totals
-  let j = totals.children[3].innerHTML;
+  let j = totals[1].children[3].innerHTML;
     j = Number.parseInt(j);
   let h = elem.children[3].innerHTML;
     h = Number.parseInt(h);
-  j = h + j
-  totals.children[3].innerHTML = j;
-}
+  j = h + j;
+  totals[1].children[3].innerHTML = j;
+
 }
