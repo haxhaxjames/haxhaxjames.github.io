@@ -113,8 +113,12 @@ function sub1 (elem) {
     let par = elem.children[1].innerHTML;
     par = Number.parseInt(par);
     
-    elem.children[3].innerHTML = par - score;
-    
+    if (score<par) {
+      elem.children[3].innerHTML = (-1*par) + score;
+    else{
+      elem.children[3].innerHTML = score - 1;
+    }
+    }
   }
 }
 function clear (elem) {
