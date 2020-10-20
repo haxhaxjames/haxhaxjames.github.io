@@ -112,9 +112,9 @@ function sub1 (elem) {
     score = Number.parseInt(score);
     let par = elem.children[1].innerHTML;
     par = Number.parseInt(par);
-    if (par>score){
+    
     elem.children[3].innerHTML = par - score;
-    }
+    
   }
 }
 function clear (elem) {
