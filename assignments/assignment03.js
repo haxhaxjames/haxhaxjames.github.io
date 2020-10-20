@@ -114,14 +114,14 @@ function sub1 (elem) {
     let par = elem.children[1].innerHTML;
     par = Number.parseInt(par);
     
-    if (score<par) {
+    if (score<par) 
       elem.children[3].innerHTML = (-1*par) + score;
     else {
       elem.children[3].innerHTML = score - 1;
     }
     }
   }
-}
+
 function clear (elem) {
   elem.children[2].innerHTML = "-";
   elem.children[3].innerHTML = "-";
