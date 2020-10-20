@@ -133,11 +133,11 @@ function clear (elem) {//resets the elem[xyz]
   elem.children[3].innerHTML = "-";
 }
 function total (elem) { 
-  if(totals[1].children[1].innerHTML == "-") { //if not yet set, game start changes all values to 0
-    totals.children[1].innerHTML = 0;
-    totals.children[2].innerHTML = 0;
-    totals.children[3].innerHTML = 0;
-}
+  //if(totals[1].children[1].innerHTML == "-") { //if not yet set, game start changes all values to 0
+    //totals.children[1].innerHTML = 0;
+    //totals.children[2].innerHTML = 0;
+    //totals.children[3].innerHTML = 0;
+//}
   if (elem.children[1].innerHTML == "-" || elem.children[2].innerHTML == "-" || elem.children[3].innerHTML == "-"){
     
   }else{
