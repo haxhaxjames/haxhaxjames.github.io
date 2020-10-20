@@ -1,7 +1,7 @@
 let elem = [];
 // assign the entire table row for hole 1 to a variable, elem
 elem[1] = document.getElementById("1");
-
+console.log(elem[1]);
 // display the number of children (all td elements)
 // console.log(elem.children.length);
 // display the content of the + button, which is the first child of the fifth element
