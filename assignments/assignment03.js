@@ -127,6 +127,11 @@ function clear (elem) {
   elem.children[3].innerHTML = "-";
 }
 function total (elem) { 
+  if(totals.children[1].innerHTML == "-") 
+    totals.children[1].innerHTML = 0;
+    totals.children[2].innerHTML = 0;
+    totals.children[3].innerHTML = 0;
+  else {
   //par total
   let x = totals.children[1].innerHTML;
     x = Number.parseInt(x);
