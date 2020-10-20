@@ -1,34 +1,6 @@
 <a href = "https://haxhaxjames.github.io/assignments/654494A0-7825-49DD-A9D4-AA76702C4511.jpeg" >assignment03.png</a>
 <!DOCTYPE html>
-<html>
 
-  <head>
-  <script type="text/javascript">
-    let elem = [];
-// assign the entire table row for hole 1 to a variable, elem
-elem[1] = document.getElementById("1");
-
-// display the number of children (all td elements)
-//console.log(elem.children.length);
-// display the content of the + button, which is the first child of the fifth element
- console.log(elem.children[4].children[0]); 
-
-// assign a function to the + button
-elem[1].children[4].children[0].onClick = function {add1(elem[1])};
-
-// create an "add1" function
-    function add1 (elem) {
-      if(elem.children[2].innerHTML == "-") {
-    elem.children[2].innerHTML = "1";
-    } else {
-    let currentScore = elem.children[2].innerHTML;
-    currentScore = Number.parseInt(currentScore);
-    elem.children[2].innerHTML = currentScore + 1;
-  }
- }
-  </script>
-  
-  <body>
 <h1>Golf Scorecard</h1>
 <table class="table table-striped">
   <tr id="0">
@@ -43,7 +15,7 @@ elem[1].children[4].children[0].onClick = function {add1(elem[1])};
     <td>4</td>
     <td>-</td>
     <td>-</td>
-    <td><button class="btn btn-success" onclick="add1(elem[1])">+</button> <button class="btn btn-danger">-</button></td>
+    <td><button class="btn btn-success">+</button> <button class="btn btn-danger">-</button></td>
   </tr>
   <tr id="2">
     <td>2</td>
@@ -172,10 +144,3 @@ elem[1].children[4].children[0].onClick = function {add1(elem[1])};
     <td id="NA"></td>
   </tr>
 </table>
-  <script>
-    console.log(elem.children[4].children[0]); 
-  </script>
-  </body>
-  </head>
-</html>
-
