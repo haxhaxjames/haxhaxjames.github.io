@@ -116,7 +116,7 @@ function sub1 (elem) {
     
     if (score<par) {
       elem.children[3].innerHTML = (-1*par) + score;
-    else{
+    else {
       elem.children[3].innerHTML = score - 1;
     }
     }
