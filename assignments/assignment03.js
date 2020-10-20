@@ -154,3 +154,4 @@ function total (elem) {
   j = h + j
   totals.children[3].innerHTML = j;
 }
+}
