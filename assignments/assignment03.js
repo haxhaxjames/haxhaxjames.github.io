@@ -100,11 +100,11 @@ function add1 (elem) {
     par = Number.parseInt(par);
     if (par<score){
       elem.children[3].innerHTML = score - par;
-    else {
+    }else {
       elem.children[3].innerHTML = score - 1;
     }
     }
-  }
+  
 }
 // create a "sub1" function
 function sub1 (elem) {
@@ -139,7 +139,7 @@ function total (elem) {
     totals.children[3].innerHTML = 0;
 }
   if (elem.children[1].innerHTML == "-" || elem.children[2].innerHTML == "-" || elem.children[3].innerHTML == "-"){
-    break;
+    
   }else{
   //par total
   let x = totals[1].children[1].innerHTML;
