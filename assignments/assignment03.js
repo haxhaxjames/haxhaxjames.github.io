@@ -99,7 +99,10 @@ function add1 (elem) {
     let par = elem.children[1].innerHTML;
     par = Number.parseInt(par);
     if (par<score){
-    elem.children[3].innerHTML = score - par;
+      elem.children[3].innerHTML = score - par;
+    else {
+      elem.children[3].innerHTML = score - 1;
+    }
     }
   }
 }
@@ -135,6 +138,9 @@ function total (elem) {
     totals.children[2].innerHTML = 0;
     totals.children[3].innerHTML = 0;
 }
+  if (elem.children[1].innerHTML == "-" || elem.children[2].innerHTML == "-" || elem.children[3].innerHTML == "-"){
+    break;
+  }else{
   //par total
   let x = totals[1].children[1].innerHTML;
     x = Number.parseInt(x);
@@ -156,5 +162,7 @@ function total (elem) {
     h = Number.parseInt(h);
   j = h + j;
   totals[1].children[3].innerHTML = j;
+    
+  }
 
 }
