@@ -133,16 +133,19 @@ function total (elem) {
   let y = elem.children[1].innerHTML;
     y = Number.parseInt(y);
   x = y + x
+  totals.children[1].innerHTML = x;
   //score totals
   let a = totals.children[2].innerHTML;
     a = Number.parseInt(a);
   let b = elem.children[2].innerHTML;
     b = Number.parseInt(b);
   a = b + a
+  totals.children[2].innerHTML = a;
   //over/under totals
   let j = totals.children[3].innerHTML;
     j = Number.parseInt(j);
   let h = elem.children[3].innerHTML;
     h = Number.parseInt(h);
   j = h + j
+  totals.children[3].innerHTML = j;
 }
