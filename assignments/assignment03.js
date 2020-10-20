@@ -69,6 +69,14 @@ function add1 (elem) {
     let currentScore = elem.children[2].innerHTML;
     currentScore = Number.parseInt(currentScore);
     elem.children[2].innerHTML = currentScore + 1;
+    //setting over
+    let score = elem.children[2].innerHTML;
+    score = Number.parseInt(score);
+    let par = elem.children[1].innerHTML;
+    par = Number.parseInt(par);
+    if (par<score){
+    elem.children[3].innerHTML = score - par;
+    }
   }
 }
 // create a "sub1" function
@@ -79,5 +87,13 @@ function sub1 (elem) {
     let currentScore = elem.children[2].innerHTML;
     currentScore = Number.parseInt(currentScore);
     elem.children[2].innerHTML = currentScore - 1;
+    //setting over
+    let score = elem.children[2].innerHTML;
+    score = Number.parseInt(score);
+    let par = elem.children[1].innerHTML;
+    par = Number.parseInt(par);
+    if (par<score){
+    elem.children[3].innerHTML = score - par;
+    }
   }
 }
