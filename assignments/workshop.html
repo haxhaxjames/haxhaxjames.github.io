@@ -78,3 +78,19 @@
 
 <div id="5B">Your answer here</div>
 
+<script>
+let person = { 
+  firstName: "Jane", 
+  lastName: "Doe", 
+  age: 45, 
+  fullName: function() {return this.firstName 
+    + " " + this.lastName},
+  streetAddress: "1234 medly",
+  city: "Ashburrow",
+  state: "MD",
+  zipCode: 68754,
+  fullAddress: function() {return this.streetAddress + ", " + this.city + " " + this.state + " " + this.zipCode}
+} 
+document.getElementById("1A").innerHTML = person.fullName();
+document.getElementById("1B").innerHTML = person.fullAddress();
+</script>
