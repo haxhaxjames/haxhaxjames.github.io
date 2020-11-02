@@ -93,4 +93,26 @@ let person = {
 } 
 document.getElementById("1A").innerHTML = person.fullName();
 document.getElementById("1B").innerHTML = person.fullAddress();
+	
+let div2a = document.getElementById("2A");
+let table2a = createTable("table2a");
+div2a.appendChild(table2a);
+table2a.setAttribute("style", "border:1px solid black;")
+table2a.setAttribute("width", "100%")
+appendTableRow3(table2a,"1","2","3");
+appendTableRow3(table2a,"4","5","6");
+appendTableRow3(table2a,"7","8","9");
+	
+let div2b = document.getElementById("2B");
+let table2b = createTable("table2b");
+div2b.appendChild(table2b);
+table2b.setAttribute("style", "border:1px solid black;")
+
+table2b.setAttribute("width", "100%")
+appendTableRow5(table2b,"1","2","3","4","5");
+appendTableRow5(table2b,"6","7","8","9","10");
+appendTableRow5(table2b,"11","12","13","14","15");
+appendTableRow5(table2b,"16","17","18","19","20");
+appendTableRow5(table2b,"21","22","23","24","25");	
+	
 </script>
