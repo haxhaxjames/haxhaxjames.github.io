@@ -93,8 +93,6 @@ function displayClubDistanceEntryForm(c) {
 function undoLastShot() {
         let club;
 	
-	club = resetAllClubDistances();
-	
 	club = JSON.parse(localStorage.getItem("clubsUndo"));
 	
 	return club;
