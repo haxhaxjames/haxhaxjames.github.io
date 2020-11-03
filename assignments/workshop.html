@@ -187,8 +187,7 @@ function validate()
         var errMessage = errors[i];
         var div = divs[i];
         if (inputs[i] == "")
-		;
-        	//document.getElementById(div).innerHTML = errMessage;
+        	errMessage = errMessage;
         else if (i==2)
         {
           var atpos=inputs[i].indexOf("@");
