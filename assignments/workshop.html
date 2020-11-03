@@ -141,7 +141,7 @@ table3b.setAttribute("style", "border:1px solid black;");
 table3b.setAttribute("width", "100%");
 let table3a = document.getElementById("3A");
 appendTableRow5(table3b,"Item","Price","Quantity","","Price * Qty");
-appendTableRow5(table3b,"Thing","5","6","",parseInt(table3a.children[0].children[0].children[1].children[1].innerHTML) * parseInt(table3a.children[0].children[0].children[2].children[1].innerHTML));
+appendTableRow5(table3b,"Thing","5","6","",eval(parseInt(table3a.children[0].children[0].children[1].children[1].innerHTML) * parseInt(table3a.children[0].children[0].children[2].children[1].innerHTML)));
 appendTableRow5(table3b,"Whathaveit","8","9","",parseInt(table3a.children[0].children[0].children[1].children[2].innerHTML) * parseInt(table3a.children[0].children[0].children[2].children[2].innerHTML));
 appendTableRow5(table3b,"Doohickey","8","9","",parseInt(table3a.children[0].children[0].children[1].children[3].innerHTML) * parseInt(table3a.children[0].children[0].children[2].children[3].innerHTML));
 appendTableRow5(table3b,"Totals",parseInt(table3a.children[0].children[0].children[1].children[1].innerHTML) +parseInt(table3a.children[0].children[0].children[1].children[2].innerHTML)+parseInt(table3a.children[0].children[0].children[1].children[3].innerHTML),
