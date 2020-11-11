@@ -26,9 +26,7 @@ var URL = "https://api.covid19api.com/summary";
 var covidJson;
 var covidJsObj;
 var newConfirmedOver1000;
-var xyzJson;
-var xyzJsObj;
-var TotalConfirmedPer100000;
+
 
 // AJAX variable
 var xhttp;
@@ -201,24 +199,6 @@ function loadContent() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 
         && this.status == 200) {
-	
-	    xyzJson = this.responseText;
-	xyzJsObj = JSON.parse(xyzJson);
-	TotalConfirmedPer100000 = [];
-	    
-	    for (let c of xyzJsObj.Countries) {
-		    for (let z of populations) {
-        if (c.Slug = z) {
-          TotalConfirmedPer100000.push({ 
-            "Slug": c.Slug, 
-            "TotalConfirmed": c.TotalConfirmed, 
-            "TotalDeaths": c.TotalDeaths,
-		  "Population": z,
-		  "TotalConfirmedPer100000": NEED WORK HERE AT THIS POINT
-		
-          });
-        }
-      }
 	    
 	    
 	    
@@ -231,7 +211,9 @@ function loadContent() {
           newConfirmedOver1000.push({ 
             "Slug": c.Slug, 
             "NewConfirmed": c.NewConfirmed, 
-            "NewDeaths": c.NewDeaths
+            "NewDeaths": c.NewDeaths,
+		  "Populations": populations[c.Slug],
+		  "Total Confirmed": c.TotalConfirmed/populations[c.Slug]
           });
         }
       }
@@ -262,7 +244,7 @@ function loadContent() {
           (x) => x.NewDeaths );
       chartData.options.title.text 
         = "Covid 19 Hotspots (" + 
-        dayjs().format("YYYY-MM-DD") + ")" ;
+        dayjs().format("MM-DD-YYYY") + ")" ;
       myChart = new Chart(ctx, chartData); 
 
     } // end if
