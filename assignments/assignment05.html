@@ -274,10 +274,10 @@ function loadContent() {
     
   }; // end xhttp.onreadystatechange = function()
 
- if (!localStorage.getItem("exists")){ 
+ if (!localStorage.getItem("newConfirmedOver1000")){ 
   	xhttp.open("GET", URL, true);
   	xhttp.send();
-	localStorage.setItem("exists", newConfirmedOver1000);
+	localStorage.setItem("newConfirmedOver1000", newConfirmedOver1000);
 } else {
 	localStorage.getItem("exists");
       chartData.data.datasets[0].backgroundColor 
