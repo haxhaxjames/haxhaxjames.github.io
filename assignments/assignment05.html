@@ -282,8 +282,8 @@ function loadContent() {
   	xhttp.send();
 	
  } else {//else use local storage
-      localStorage.getItem("covidJson");
-      covidJsObj = JSON.parse(covidJson);
+      
+      covidJsObj = JSON.parse(localStorage.getItem("covidJson"));
       newConfirmedOver1000 = [];
       
       for (let c of covidJsObj.Countries) {
