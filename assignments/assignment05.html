@@ -9,7 +9,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 
 <!-- Lodash: https://lodash.com/ -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js">
+	const _ = require("lodash");
+</script>
 
 <!-- Day.js: https://day.js.org/docs/en/installation/browser -->
 <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
@@ -26,7 +28,7 @@ var URL = "https://api.covid19api.com/summary";
 var covidJson;
 var covidJsObj;
 var newConfirmedOver1000;
-const _ = require("lodash");
+
 
 // AJAX variable
 var xhttp;
