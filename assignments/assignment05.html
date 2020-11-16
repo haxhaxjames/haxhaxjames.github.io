@@ -274,12 +274,12 @@ function loadContent() {
     } // end if
     
   }; // end xhttp.onreadystatechange = function()
-
- if (!localStorage.getItem("newConfirmedOver1000") || (newConfirmedOver1000.map( (x) => x.time.slice(8,9) )<getDate())){ 
+//if there isnt a local storage then call
+ if (!localStorage.getItem("newConfirmedOver1000"){// || (newConfirmedOver1000.map( (x) => x.time.slice(8,9) ) < getDate())){ 
   	xhttp.open("GET", URL, true);
   	xhttp.send();
 	localStorage.setItem("newConfirmedOver1000", newConfirmedOver1000);
-} else {
+} else {//else use local storage
 	localStorage.getItem("newConfirmedOver1000");
       chartData.data.datasets[0].backgroundColor 
         = "rgba(100,100,100,0.4)"; // gray
