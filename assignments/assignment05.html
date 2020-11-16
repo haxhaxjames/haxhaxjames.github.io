@@ -231,7 +231,8 @@ function loadContent() {
       }
       var dt = new Date(newConfirmedOver1000[0].time);
       dt.setDate( dt.getDate() - 1 );   
-      
+      var olddt = dt.getDate();
+	    
       
 	
 	 
@@ -279,7 +280,7 @@ function loadContent() {
   }; // end xhttp.onreadystatechange = function()
 //if there isnt a local storage then call
 	
- if (!localStorage.getItem("covidJson") ||  dtnew < dt.getDate()) {
+ if (!localStorage.getItem("covidJson") ||  dtnew < olddt) {
      
   	xhttp.open("GET", URL, true);
   	xhttp.send();
