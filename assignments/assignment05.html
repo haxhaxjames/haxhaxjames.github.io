@@ -212,7 +212,8 @@ function loadContent() {
 	    
 	    
       covidJson = xhttp.responseText;
-      localStorage.setItem("covidJson", covidJson);    
+      localStorage.setItem("covidJson", covidJson); 
+      
       covidJsObj = JSON.parse(covidJson);
       newConfirmedOver1000 = [];
       
@@ -228,7 +229,8 @@ function loadContent() {
           });
         }
       }
-          
+      var dt = new Date(newConfirmedOver1000[0].time);
+      dt.setDate( dt.getDate() - 1 );   
     
       
 	
@@ -276,8 +278,9 @@ function loadContent() {
     
   }; // end xhttp.onreadystatechange = function()
 //if there isnt a local storage then call
- if (!localStorage.getItem("covidJson")) {
-     // || (newConfirmedOver1000.map( (x) => x.time.slice(8,9) ) < getDate()))
+	
+ if (!localStorage.getItem("covidJson") || newConfirmedOver1000[0].time > dt.getDate()) {
+     
   	xhttp.open("GET", URL, true);
   	xhttp.send();
 	
