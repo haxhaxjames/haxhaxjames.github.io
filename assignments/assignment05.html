@@ -26,7 +26,7 @@ var URL = "https://api.covid19api.com/summary";
 var covidJson;
 var covidJsObj;
 var newConfirmedOver1000;
-
+const _ = require("lodash");
 
 // AJAX variable
 var xhttp;
@@ -225,7 +225,7 @@ function loadContent() {
             "TotalConfirmed": c.TotalConfirmed, 
             "TotalDeaths": c.TotalDeaths,
             "Populations": populations[c.Slug],
-	    "totalConfirmed": c.TotalConfirmed/populations[c.Slug],
+	    "totalConfirmed": c.TotalConfirmed/100000,
 	    "time": c.Date
           });
         }
@@ -270,7 +270,7 @@ function loadContent() {
           (x) => x.TotalDeaths );
       chartData.data.datasets[3].data  
         = newConfirmedOver1000.map( 
-          (x) => x.totalConfirmed );
+          _.orderBy(newConfirmedOver1000.map((x) => x.totalConfirmed)) );
       chartData.options.title.text 
         = "Covid 19 Hotspots (" + 
         dayjs().format("MM-DD-YYYY") + ")" ;
