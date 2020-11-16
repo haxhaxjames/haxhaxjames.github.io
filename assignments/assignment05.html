@@ -90,6 +90,7 @@ var chartData = {
 };
 // var myChart = new Chart(ctx, chartData); 
 var dtnew = new Date();
+var olddt;
 // ---------- loadContent() function ----------
 
 // Note: you can't execute API data dependent code outside the loadContent() function because the code might execute before the AJAX call responds, that is, it might execute before the variable, covidJson, is initialized with data from the API. Example below.
@@ -231,7 +232,7 @@ function loadContent() {
       }
       var dt = new Date(newConfirmedOver1000[0].time);
       dt.setDate( dt.getDate() - 1 );   
-      var olddt = dt.getDate();
+      olddt = dt.getDate();
 	    
       
 	
