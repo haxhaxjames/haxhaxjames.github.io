@@ -201,7 +201,7 @@ var populations = {
 'switzerland' : 8632703,
 }
 	
-if (!xhttp.responseText){	
+	
 function loadContent() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -273,12 +273,12 @@ function loadContent() {
     
   }; // end xhttp.onreadystatechange = function()
 
-  
-  xhttp.open("GET", URL, true);
-  xhttp.send();
-  
+  if (!xhttp.responseText){
+  	xhttp.open("GET", URL, true);
+  	xhttp.send();
+  };
 } // end function loadContent() 
-};	
+	
 	
 
 // data from: https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population
