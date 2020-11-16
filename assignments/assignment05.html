@@ -269,8 +269,7 @@ function loadContent() {
         = newConfirmedOver1000.map( 
           (x) => x.TotalDeaths );
       chartData.data.datasets[3].data  
-        = newConfirmedOver1000.map( 
-          _.orderBy(newConfirmedOver1000.map((x) => x.totalConfirmed)) );
+        = _.orderBy(newConfirmedOver1000.map((x) => x.totalConfirmed));
       chartData.options.title.text 
         = "Covid 19 Hotspots (" + 
         dayjs().format("MM-DD-YYYY") + ")" ;
@@ -332,8 +331,7 @@ function loadContent() {
         = newConfirmedOver1000.map( 
           (x) => x.TotalDeaths );
       chartData.data.datasets[3].data  
-        = newConfirmedOver1000.map( 
-          (x) => x.totalConfirmed );
+        = _.orderBy(newConfirmedOver1000.map((x) => x.totalConfirmed));
       chartData.options.title.text 
         = "Covid 19 Hotspots (" + 
         dayjs().format("MM-DD-YYYY") + ")" ;
