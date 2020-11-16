@@ -203,6 +203,7 @@ var populations = {
 	
 	
 function loadContent() {
+	
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 
@@ -225,8 +226,8 @@ function loadContent() {
           });
         }
       }
-	    
-
+          
+    
       
 	
 	 
@@ -273,12 +274,13 @@ function loadContent() {
     
   }; // end xhttp.onreadystatechange = function()
 
-  if (!xhttp.responseText){
+ if (!localStorage.getItem("exists")){ 
   	xhttp.open("GET", URL, true);
   	xhttp.send();
-  };
+	localStorage.setItem("exists", newConfirmedOver1000);
+};
 } // end function loadContent() 
-	
+
 	
 
 // data from: https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population
