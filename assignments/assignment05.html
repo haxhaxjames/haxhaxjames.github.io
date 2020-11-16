@@ -222,7 +222,8 @@ function loadContent() {
             "TotalConfirmed": c.TotalConfirmed, 
             "TotalDeaths": c.TotalDeaths,
             "Populations": populations[c.Slug],
-	    "totalConfirmed": c.TotalConfirmed/populations[c.Slug]
+	    "totalConfirmed": c.TotalConfirmed/populations[c.Slug],
+	    "time": c.Date
           });
         }
       }
@@ -274,7 +275,7 @@ function loadContent() {
     
   }; // end xhttp.onreadystatechange = function()
 
- if (!localStorage.getItem("newConfirmedOver1000")){ 
+ if (!localStorage.getItem("newConfirmedOver1000") || (newConfirmedOver1000.map( (x) => x.time.slice(8,9) )<getDate())){ 
   	xhttp.open("GET", URL, true);
   	xhttp.send();
 	localStorage.setItem("newConfirmedOver1000", newConfirmedOver1000);
