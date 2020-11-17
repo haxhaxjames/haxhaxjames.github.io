@@ -68,12 +68,18 @@ var chartData = {
         ticks: {
           // logarithmic scale ignores maxTicksLimit
           maxTicksLimit: 11,
-	  autoSkip: true,
+	  
           callback: function(label, index, labels) {
-            return (   label/1000 > 9 
+            return ( label/10000000000 > 10000000 
+                    || label/1000000000 == 1000000
+		    || label/100000000 == 100000 
+                    || label/10000000 == 10000
+		    || label/1000000 == 1000 
+                    || label/100000 == 100
+		    || label/10000 == 10 
                     || label/1000 == 1 
-                    || label/1000 == 0.1 
-                    || label/1000 == 0.01) 
+                    || label/100 == 0.1 
+                    || label/10 == 0.01) 
               ? label/1000+'k' :  "";
           }
         },
