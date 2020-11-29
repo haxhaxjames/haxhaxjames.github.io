@@ -182,7 +182,7 @@ function toComma(value) {
     loans[i].loan_year = loans[0].loan_year + i;
     $("#loan_year0"+ (i+1) ).val(loans[i].loan_year);
   }
-	  
+	 alert('button clicked'); 
   loans[0].loan_amount = parseInt($("#loan_amt01").val());
   loans[1].loan_amount = parseInt($("#loan_amt02").val());
   loans[2].loan_amount = parseInt($("#loan_amt03").val());
