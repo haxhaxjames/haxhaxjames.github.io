@@ -76,7 +76,7 @@
 								</tr>
 							</table>
 							<br />
-							<button type="button" class="btn btn-primary" onclick="updateLoansArray();">Re-calculate</button> 
+							<button type="button" class="btn btn-primary" id="button">Re-calculate</button> 
 						</div>
 					</div>
 
@@ -176,9 +176,8 @@ $(document).ready(function(){
 function toComma(value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-
-function updateLoansArray() {
-  loans[0].loan_year = parseInt($("#loan_year01").val());
+   $("#button").click( function() {
+             loans[0].loan_year = parseInt($("#loan_year01").val());
   for(var i=1; i<5; i++) {
     loans[i].loan_year = loans[0].loan_year + i;
     $("#loan_year0"+ (i+1) ).val(loans[i].loan_year);
@@ -194,7 +193,25 @@ function updateLoansArray() {
   for(var i=1; i<5; i++) {
     loans[i].loan_int_rate = loans[0].loan_int_rate;
   }
-}
+   }
+// function updateLoansArray() {
+//   loans[0].loan_year = parseInt($("#loan_year01").val());
+//   for(var i=1; i<5; i++) {
+//     loans[i].loan_year = loans[0].loan_year + i;
+//     $("#loan_year0"+ (i+1) ).val(loans[i].loan_year);
+//   }
+	  
+//   loans[0].loan_amount = parseInt($("#loan_amt01").val());
+//   loans[1].loan_amount = parseInt($("#loan_amt02").val());
+//   loans[2].loan_amount = parseInt($("#loan_amt03").val());
+//   loans[3].loan_amount = parseInt($("#loan_amt04").val());
+//   loans[4].loan_amount = parseInt($("#loan_amt05").val());
+	  
+//   loans[0].loan_int_rate = parseInt($("#loan_int01").val());
+//   for(var i=1; i<5; i++) {
+//     loans[i].loan_int_rate = loans[0].loan_int_rate;
+//   }
+// }
    </script>
     
 	</body>
