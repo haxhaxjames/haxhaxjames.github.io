@@ -184,7 +184,7 @@ function toComma(value) {
     newdata[j].loan_year = newdata[0].loan_year + j;
     $("#loan_year0"+ (j+1) ).val(newdata[j].loan_year);
   }
-	 alert('button clicked'); 
+	  
   newdata[0].loan_amount = parseInt($("#loan_amt01").val());
   newdata[1].loan_amount = parseInt($("#loan_amt02").val());
   newdata[2].loan_amount = parseInt($("#loan_amt03").val());
@@ -204,7 +204,7 @@ function updateLoansArray() {
     newdat[j].loan_year = newdat[0].loan_year + j;
     $("#loan_year0"+ (j+1) ).val(newdat[j].loan_year);
   };
-	 alert('button clicked'); 
+	 
   newdat[0].loan_amount = parseInt($("#loan_amt01").val());
   newdat[1].loan_amount = parseInt($("#loan_amt02").val());
   newdat[2].loan_amount = parseInt($("#loan_amt03").val());
