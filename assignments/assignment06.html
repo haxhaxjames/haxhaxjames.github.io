@@ -234,7 +234,7 @@ if reg.test = true {
     $("#loan_bal0" + 3)[0].innerHTML = toComma($("#loan_amt03").val() * $("#loan_int03").val() * $("#loan_bal0" + 2)[0].innerHTML); 
     $("#loan_bal0" + 4)[0].innerHTML = toComma($("#loan_amt04").val() * $("#loan_int04").val() * $("#loan_bal0" + 3)[0].innerHTML); 
     $("#loan_bal0" + 5)[0].innerHTML = toComma($("#loan_amt05").val() * $("#loan_int05").val() * $("#loan_bal0" + 4)[0].innerHTML);
-	 
+	 $("loan_int_accrued").innerHTML = $("#loan_bal0" + 5)[0].innerHTML - ($("#loan_amt01").val()+$("#loan_amt02").val()+$("#loan_amt03").val()+$("#loan_amt04").val()+$("#loan_amt05").val())
 	 
 	localStorage.setItem("data", JSON.stringify(newdat));
 };
