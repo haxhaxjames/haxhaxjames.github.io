@@ -178,7 +178,7 @@ function toComma(value) {
 }
 			
    $(document).ready("#button").click( function() {
-	   var newdata[] = JSON.parse(localStorage.getItem("data")); 
+	   var newdata = JSON.parse(localStorage.getItem("data")); 
              newdata[0].loan_year = parseInt($("#loan_year01").val());
   for(var j=1; j<5; j++) {
     newdata[j].loan_year = newdata[0].loan_year + j;
@@ -198,7 +198,7 @@ function toComma(value) {
 	   localStorage.setItem("data", JSON.stringify(newdata));
    });
 function updateLoansArray() {
-  var newdat[] = JSON.parse(localStorage.getItem("data")); 
+  var newdat = JSON.parse(localStorage.getItem("data")); 
   newdat[0].loan_year = parseInt($("#loan_year01").val());
   for(var j=1; j<5; j++) {
     newdat[j].loan_year = newdat[0].loan_year + j;
