@@ -177,7 +177,7 @@ function toComma(value) {//adding a comma based on the dollar value
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 var reg = /[2][0-9]{3}/;//regular expression to help limit the false year entries
-  if (reg.test($("#loan_year01").val()) = true) {	  
+  if (reg.test($("#loan_year01").val()) == true) {	  
    $(document).ready("#button").click( function() {//when the button id is clicked
 	   var newdata = JSON.parse(localStorage.getItem("data")); //pull the locally stored loan array
              newdata[0].loan_year = parseInt($("#loan_year01").val());
@@ -209,7 +209,7 @@ var reg = /[2][0-9]{3}/;//regular expression to help limit the false year entrie
 	  alert("Please input an accurate year."); //an alert if the entered first year is out of range
 	  
   };
-if (reg.test($("#loan_year01").val()) = true) {	 
+if (reg.test($("#loan_year01").val()) == true) {	 
  function updateLoansArray() {//this is the same function as above, but as a function so it can be called in other methods.
   var newdat = JSON.parse(localStorage.getItem("data")); 
   newdat[0].loan_year = parseInt($("#loan_year01").val());
