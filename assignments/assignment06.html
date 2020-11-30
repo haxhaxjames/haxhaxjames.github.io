@@ -124,7 +124,7 @@ var loans = [
   { loan_year: 2023, loan_amount: 10000.00, loan_int_rate: 0.0453 },
   { loan_year: 2024, loan_amount: 10000.00, loan_int_rate: 0.0453 }
 ]; 
-
+localStorage.setItem("data", JSON.stringify(loans));
 // --- function: loadDoc() ---
 
 //function loadDoc() {
@@ -153,8 +153,8 @@ $(document).ready(function(){
     $("#loan_int0" + i)[0].style.color = "white";
    loanWithInterest = (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
    $("#loan_bal0" + i)[0].innerHTML = toComma(loanWithInterest.toFixed(2));
-    } // end: "for" loop
-  
+    }; // end: "for" loop
+
   // all input fields: select contents on fucus
   $("input[type=text]").focus(function() {
     $(this).select();
@@ -176,42 +176,47 @@ $(document).ready(function(){
 function toComma(value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+			
    $(document).ready("#button").click( function() {
-             loans[0].loan_year = parseInt($("#loan_year01").val());
-  for(var i=1; i<5; i++) {
-    loans[i].loan_year = loans[0].loan_year + i;
-    $("#loan_year0"+ (i+1) ).val(loans[i].loan_year);
+	   var newdata[] = JSON.parse(localStorage.getItem("data")); 
+             newdata[0].loan_year = parseInt($("#loan_year01").val());
+  for(var j=1; j<5; j++) {
+    newdata[j].loan_year = newdata[0].loan_year + j;
+    $("#loan_year0"+ (j+1) ).val(newdata[j].loan_year);
   }
 	 alert('button clicked'); 
-  loans[0].loan_amount = parseInt($("#loan_amt01").val());
-  loans[1].loan_amount = parseInt($("#loan_amt02").val());
-  loans[2].loan_amount = parseInt($("#loan_amt03").val());
-  loans[3].loan_amount = parseInt($("#loan_amt04").val());
-  loans[4].loan_amount = parseInt($("#loan_amt05").val());
+  newdata[0].loan_amount = parseInt($("#loan_amt01").val());
+  newdata[1].loan_amount = parseInt($("#loan_amt02").val());
+  newdata[2].loan_amount = parseInt($("#loan_amt03").val());
+  newdata[3].loan_amount = parseInt($("#loan_amt04").val());
+  newdata[4].loan_amount = parseInt($("#loan_amt05").val());
 	  
-  loans[0].loan_int_rate = parseInt($("#loan_int01").val());
-  for(var i=1; i<5; i++) {
-    loans[i].loan_int_rate = loans[0].loan_int_rate;
-  }
+  newdata[0].loan_int_rate = parseInt($("#loan_int01").val());
+  for(var k=1; k<5; k++) {
+    newdata[k].loan_int_rate = newdata[0].loan_int_rate;
+  };
+	   localStorage.setItem("data", JSON.stringify(newdata));
    });
-// function updateLoansArray() {
-//   loans[0].loan_year = parseInt($("#loan_year01").val());
-//   for(var i=1; i<5; i++) {
-//     loans[i].loan_year = loans[0].loan_year + i;
-//     $("#loan_year0"+ (i+1) ).val(loans[i].loan_year);
-//   }
+function updateLoansArray() {
+  var newdat[] = JSON.parse(localStorage.getItem("data")); 
+  newdat[0].loan_year = parseInt($("#loan_year01").val());
+  for(var j=1; j<5; j++) {
+    newdat[j].loan_year = newdat[0].loan_year + j;
+    $("#loan_year0"+ (j+1) ).val(newdat[j].loan_year);
+  };
+	 alert('button clicked'); 
+  newdat[0].loan_amount = parseInt($("#loan_amt01").val());
+  newdat[1].loan_amount = parseInt($("#loan_amt02").val());
+  newdat[2].loan_amount = parseInt($("#loan_amt03").val());
+  newdat[3].loan_amount = parseInt($("#loan_amt04").val());
+  newdat[4].loan_amount = parseInt($("#loan_amt05").val());
 	  
-//   loans[0].loan_amount = parseInt($("#loan_amt01").val());
-//   loans[1].loan_amount = parseInt($("#loan_amt02").val());
-//   loans[2].loan_amount = parseInt($("#loan_amt03").val());
-//   loans[3].loan_amount = parseInt($("#loan_amt04").val());
-//   loans[4].loan_amount = parseInt($("#loan_amt05").val());
-	  
-//   loans[0].loan_int_rate = parseInt($("#loan_int01").val());
-//   for(var i=1; i<5; i++) {
-//     loans[i].loan_int_rate = loans[0].loan_int_rate;
-//   }
-// }
+  newdat[0].loan_int_rate = parseInt($("#loan_int01").val());
+  for(var k=1; k<5; k++) {
+    newdat[k].loan_int_rate = newdat[0].loan_int_rate;
+  };
+	localStorage.setItem("data", JSON.stringify(newdat));
+};
    </script>
     
 	</body>
