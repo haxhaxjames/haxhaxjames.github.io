@@ -177,8 +177,9 @@ function toComma(value) {//adding a comma based on the dollar value
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 var reg = /[2][0-9]{3}/;//regular expression to help limit the false year entries
-  if (reg.test($("#loan_year01").val()) == true) {	  
+  	  
    $(document).ready("#button").click( function() {//when the button id is clicked
+	   if (reg.test($("#loan_year01").val()) == true) {
 	   var newdata = JSON.parse(localStorage.getItem("data")); //pull the locally stored loan array
              newdata[0].loan_year = parseInt($("#loan_year01").val());
   for(var j=1; j<5; j++) {//parse through the years and update the values by +1 each row
@@ -203,14 +204,17 @@ var reg = /[2][0-9]{3}/;//regular expression to help limit the false year entrie
     $("#loan_bal0" + 5)[0].innerHTML = toComma($("#loan_amt05").val() * $("#loan_int05").val() * $("#loan_bal0" + 4)[0].innerHTML); //setting the balance after loans interest
     $("loan_int_accrued").innerHTML = $("#loan_bal0" + 5)[0].innerHTML - ($("#loan_amt01").val()+$("#loan_amt02").val()+$("#loan_amt03").val()+$("#loan_amt04").val()+$("#loan_amt05").val()) //total interest
 	   localStorage.setItem("data", JSON.stringify(newdata));//restringing and storing the newly edited data
-   });
+   
   } else {
   
 	  alert("Please input an accurate year."); //an alert if the entered first year is out of range
 	  
   };
-if (reg.test($("#loan_year01").val()) == true) {	 
+ });
+	  
+	 
  function updateLoansArray() {//this is the same function as above, but as a function so it can be called in other methods.
+	 if (reg.test($("#loan_year01").val()) == true) {
   var newdat = JSON.parse(localStorage.getItem("data")); 
   newdat[0].loan_year = parseInt($("#loan_year01").val());
   for(var j=1; j<5; j++) {
@@ -237,12 +241,13 @@ if (reg.test($("#loan_year01").val()) == true) {
 	 $("loan_int_accrued").innerHTML = $("#loan_bal0" + 5)[0].innerHTML - ($("#loan_amt01").val()+$("#loan_amt02").val()+$("#loan_amt03").val()+$("#loan_amt04").val()+$("#loan_amt05").val())
 	 
 	localStorage.setItem("data", JSON.stringify(newdat));
-};
+
   } else {
   
 	  alert("Please input an accurate year."); 
 	  
   };
+ };
    </script>
     
 	</body>
