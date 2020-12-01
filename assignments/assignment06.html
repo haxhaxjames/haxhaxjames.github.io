@@ -250,29 +250,29 @@ var reg = /[2][0-9]{3}/;//regular expression to help limit the false year entrie
   };
  };
 	  
-	  var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope) {
-  $scope.payments =[];
+	  var app = angular.module('myApp', []);//creating the module
+app.controller('myCtrl', function($scope) {//applying the function
+  $scope.payments =[];//function range and adding data
   $scope.populate = function () {
-    updateLoansArray();
+    updateLoansArray();//updating the forms
     let total = loanWithInterest;
     let iRate = loans[0].loan_int_rate;
-    let r = iRate / 12;
+    let r = iRate / 12;//int rate over 12
     let n = 11;
-    //loan payment formula
-    //https://www.thebalance.com/loan-payment-calculations-315564
+    //loan payment formuoli
+  
     let pay = 12 * (total / ((((1+r)**(n*12))-1)/(r *(1+r)**(n*12))));
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 10; i++) {//10 year cycle
       total -= pay //6500
       let int = total * (iRate); 
-      $scope.payments[i]={
+      $scope.payments[i]={//adding the respective data, during calculation
         "year":loans[4].loan_year + i + 1,
         "payment": toMoney(pay), //toMoney(6500),
         "amt": toMoney(int),
         "ye": toMoney(total += int)
       }
     }
-    $scope.payments[10] = {
+    $scope.payments[10] = {//displaying the final payment 
       "year":loans[4].loan_year + 11,
       "payment": toMoney(total),
       "amt": toMoney(0),
